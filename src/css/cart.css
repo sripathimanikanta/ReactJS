@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Playfair+Display:wght@400;500;700&family=Poppins:wght@500;400;700&display=swap");
+* {
+  font-family: "Poppins";
+}
+
+.open-cart {
+  transform: scale(1) !important;
+}
+
+.Cart {
+  position: absolute;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: white;
+  right: 1%;
+  top: 90px;
+  transform: scale(0);
+  transition: transform 0.5 ease-in-out;
+  z-index: 99;
+  border-radius: 1em;
+  width: 98%;
+}
+
+.cart-heading {
+  font-weight: bold;
+  padding: 2em;
+}
+
+hr {
+  color: rgb(169, 169, 169);
+}
+
+.cart-items {
+  display: flex;
+  padding: 1em;
+  gap: 1em;
+  align-items: center;
+  justify-content: space-around;
+  color: rgb(100, 100, 100);
+}
+.cart-items img {
+  width: 12%;
+  height: 12%;
+  border-radius: 0.5em;
+}
+
+.cart-content {
+  padding: 0;
+  margin: 0;
+  width: 18em;
+}
+.cart-content .cart-heading {
+  padding: 0em;
+  margin-bottom: 3%;
+  font-weight: 400;
+}
+.cart-content .price-row {
+  display: flex;
+  gap: 0.3em;
+}
+.cart-content .price-row .final-price {
+  color: black;
+  font-weight: bold;
+}
+
+.no-items {
+  padding: 2em;
+  font-weight: bold;
+}
+
+.delete {
+  cursor: pointer;
+}/*# sourceMappingURL=cart.css.map */

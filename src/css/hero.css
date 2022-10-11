@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Playfair+Display:wght@400;500;700&family=Poppins:wght@200;400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.descrip, .sneak-comp, .heading {
+  margin-bottom: 1em;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-content {
+  padding: 2em;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.sneak-comp {
+  color: #ff7d1b;
+  font-weight: bold;
+}
+
+.descrip {
+  color: rgb(96, 96, 96);
+  line-height: 1.7em;
+}
+
+.heading, .offer-price {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.pric-per-apr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price-perc {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.offer-perc {
+  color: #ff7d1b;
+  font-weight: bold;
+}
+
+.price {
+  display: inline;
+  color: rgb(176, 176, 176);
+  text-decoration: line-through;
+  font-weight: bold;
+  justify-self: flex-start;
+}
+
+.cart-num {
+  display: flex;
+  justify-content: space-between;
+  margin: 2em 0;
+}
+
+.cart-buttons {
+  border: none;
+}
+
+.add-cart {
+  background-color: #ff7d1b;
+  border: solid #ff7d1b;
+  padding: 1em;
+  text-align: center;
+  color: white;
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1em;
+  margin-bottom: 4em;
+}/*# sourceMappingURL=hero.css.map */

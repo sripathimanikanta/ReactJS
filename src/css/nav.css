@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Playfair+Display:wght@400;500;700&family=Poppins:wght@400;700&display=swap");
+.Flex-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 2em;
+  align-items: center;
+  gap: 2em;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.open-nav {
+  transform: translateX(0%) !important;
+  box-shadow: 50vw 0 0em 0em rgba(53, 53, 53, 0.8);
+}
+
+.menu {
+  cursor: pointer;
+}
+
+.menu-bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: white;
+  width: 70vw;
+  height: 100vh;
+  z-index: 99;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.menu-bar .close {
+  cursor: pointer;
+  position: absolute;
+  top: 1.5em;
+  left: 1em;
+}
+.menu-bar ul {
+  margin-top: 4em;
+}
+.menu-bar ul li {
+  margin: 1em;
+  list-style-type: none;
+}
+.menu-bar ul li a {
+  color: black;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.name-logo {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.comp-name {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-top: -0.1em;
+  font-family: "Poppins", sans-serif;
+}
+
+.namebox {
+  display: flex;
+  justify-self: unset;
+}
+
+.fl-end {
+  justify-self: unset;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+
+.avatar-image {
+  width: 2em;
+  height: 2em;
+}/*# sourceMappingURL=nav.css.map */

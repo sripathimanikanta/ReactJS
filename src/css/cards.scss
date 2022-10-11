@@ -1,0 +1,30 @@
+.hero-img-div{
+    margin: 0 auto;
+    position: relative;
+}
+
+.hero-img-button{
+    box-sizing: content-box;
+    position: absolute;
+    top:50%;
+    left:0;
+    background-color: white;
+    border-radius: 55%;
+    // border: white 1em solid;
+    padding: 1em;
+    transform: translateY(-50%);
+    // height: 50%;
+}
+
+.button-left{
+    left: 1em;
+}
+
+.button-right{
+    right:0;
+    left: unset;
+    right:1em;
+}
+.hero-img{
+    width: 100%;
+}
