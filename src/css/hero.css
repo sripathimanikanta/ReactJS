@@ -82,4 +82,38 @@
   align-items: center;
   border-radius: 1em;
   margin-bottom: 4em;
+}
+
+@media only screen and (min-width: 850px) {
+  .hero {
+    flex-direction: row;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 3em;
+  }
+  .hero-content {
+    width: 100%;
+    padding: 0 4em;
+  }
+  .pric-per-apr {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .cart-num_cart-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+  }
+  .cart-num {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+  .add-cart {
+    align-items: center;
+    margin: unset;
+    width: 100%;
+  }
 }/*# sourceMappingURL=hero.css.map */

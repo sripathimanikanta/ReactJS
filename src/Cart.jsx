@@ -3,40 +3,26 @@ import "./css/cart.css";
 import img_thumb from "./Assets/image-product-1-thumbnail.jpg";
 import img_thumb_2 from "./Assets/image-product-2-thumbnail.jpg";
 
-export default function Cart({ price, count }) {
-  let cartItems = [
-    {
-      id: 1,
-      img: img_thumb,
-      cartHeading: "Autumn Limited Edition",
-      cartPrice: price.offerPrice,
-      noOfItems: count,
-      finalPrice: price.offerPrice * count,
-    }
-    // {
-    //   id: 2,
-    //   img: img_thumb_2,
-    //   cartHeading: "Fall Limited Edition",
-    //   cartPrice: price.offerPrice,
-    //   noOfItems: count,
-    //   finalPrice: price.offerPrice * count,
-    // },
-  ];
-  console.log("before inside Cart function",cartItems);
-
-  let [cartItem, setCartItem] = useState(cartItems);
-  console.log("after inside Cart function cartItems",cartItems);
-  console.log("after inside Cart function cartitem",cartItem);
-
-  // function remover(id){
-  //   console.log(id);
-  //   setCartItem((oldvals) => {
-  //     return (oldvals.filter((arr, index) => {
-  //       console.log(arr, index);
-  //       return arr[index].id !== id;
-  //     }))
-  //   })
-  // }
+export default function Cart(props) {
+let {price, count, remov}= props;
+let cartItems = [
+  {
+    id: 1,
+    img: img_thumb,
+    cartHeading: "Autumn Limited Edition",
+    cartPrice: price.offerPrice,
+    noOfItems: count,
+    finalPrice: price.offerPrice * count,
+  }
+  // {
+  //   id: 2,
+  //   img: img_thumb_2,
+  //   cartHeading: "Fall Limited Edition",
+  //   cartPrice: price.offerPrice,
+  //   noOfItems: count,
+  //   finalPrice: price.offerPrice * count,
+  // },
+];
 
   return (
     <div className="Cart">
@@ -45,7 +31,7 @@ export default function Cart({ price, count }) {
       </div>
       <hr />
 
-      <CartItems Items={cartItems} />
+      <CartItems Items={cartItems} remov={remov} />
     </div>
   );
 }
@@ -56,7 +42,7 @@ let CartItems = (props) => {
   return (
     <>
       {props.Items.map((e) => {
-        if(e.noOfItems == 0){
+        if(e.noOfItems === 0){
           return <div className="no-items">Your Cart is empty</div>
         }
         else{
@@ -76,6 +62,7 @@ let CartItems = (props) => {
               </div>
               <svg
             // onClick={() => {props.remover(e.id)}}
+            onClick={props.remov}
             className="delete"
             width="14"
             height="16"

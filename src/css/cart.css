@@ -8,6 +8,7 @@
 }
 
 .Cart {
+  display: hidden;
   position: absolute;
   height: -webkit-max-content;
   height: -moz-max-content;

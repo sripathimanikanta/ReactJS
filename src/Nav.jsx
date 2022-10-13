@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import img1 from "./Assets/image-avatar.png";
 import "./css/nav.css";
+import {NavLink} from 'react-router-dom';
+import { useSelector} from "react-redux";
+
 // import Cart from "./Cart";
 
 function OpenNav() {
@@ -12,6 +15,8 @@ function CloseNav() {
 }
 
 export default function Nav() {
+  let myState = useSelector((state) => (state.changeTheNumber));
+  
   let [cartCurrentState, setUpdatedState] = useState("toadd");
   console.log((cartCurrentState));
 
@@ -24,6 +29,12 @@ export default function Nav() {
       setUpdatedState("toadd");
     }
   }
+
+  let count=0;
+  function getTheCountValue(countValue){
+    count = countValue;
+  }
+  
   return (
     <>
       <nav className="Flex-container">
@@ -66,17 +77,24 @@ export default function Nav() {
                 <a href="">Women</a>
               </li>
               <li>
-                <a href="">About</a>
+                <NavLink to="/about">About</NavLink>
               </li>
               <li>
                 <a href="">Contact</a>
               </li>
             </ul>
           </div>
-          <span className="comp-name">sneakers</span>
+          <NavLink to="/" >
+        <span className="comp-name">sneakers</span>
+        </NavLink>
         </div>
         <div className="namebox">
           <span className="fl-end">
+            <div className="cart-box">
+            <div className="cart-box-small">
+              <div className="Nber">
+                {myState}
+              </div>
             <svg
               style={{ cursor: "pointer" }}
               className="cart-svg"
@@ -91,10 +109,13 @@ export default function Nav() {
                 fillRule="nonzero"
               />
             </svg>
+            </div>
+            </div>
             <img className="avatar-image" src={img1} alt="" />
           </span>
         </div>
       </nav>
+      <hr />
     </>
   );
 }

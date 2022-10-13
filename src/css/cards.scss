@@ -28,3 +28,45 @@
 .hero-img{
     width: 100%;
 }
+
+.hero-img-thumb-container{
+    display: none !important;
+}
+
+@media only screen and (min-width: 850px) {
+    .cards-container{
+        width: max-content;
+        margin: 0 auto;
+    }
+    .hero-img-div{
+        margin-left: 1em;
+        // height: 35em;
+        width: max-content;
+    }
+    .hero-img{
+    border-radius: 1em;
+    height: 25em;
+    width: auto;
+    }
+
+    .hero-img-thumb-container {
+        display: flex !important;
+        gap: 1em;
+        justify-content: space-between;
+      }
+      
+      .hero-img-thumb {
+        border-radius: 1em;
+        width: 5em;
+      }
+      
+      .hero-img-div {
+        margin-left: unset !important;
+        width: max-content;
+      }
+
+      .hero-img-button{
+        display: none;
+      }
+}
+

@@ -2,6 +2,7 @@
 // @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Playfair+Display:wght@400;500;700&family=Poppins:wght@400;700&display=swap');
 @use 'base';
 
+// $height-of-hero: calc(.hero-content.height)
 %mar-bt-1e{
     margin-bottom: 1em;
 }
@@ -10,7 +11,6 @@
     display: flex;
     flex-direction: column;
 }
-
 
 .hero-content{
     padding: 2em;
@@ -84,4 +84,46 @@
     align-items: center;
     border-radius: 1em;
     margin-bottom: 4em;
+}
+
+
+@media only screen and (min-width: 850px){
+    .hero{
+        flex-direction: row;
+        max-width: 1200px;
+        margin: 0 auto;
+        margin-top: 3em;
+    }
+
+    .hero-content{
+        width: 100%;
+        padding: 0 4em;
+    }
+
+    .pric-per-apr{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .cart-num_cart-button{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .cart-num{
+        display: flex;
+        // justify-content: space-around;
+        align-items: center;
+        gap: 1em
+    }
+
+    .add-cart{
+        align-items: center;
+        margin: unset;
+        width: 100%;
+    }
+
 }
