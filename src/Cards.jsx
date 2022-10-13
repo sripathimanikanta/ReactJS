@@ -20,7 +20,7 @@ export default function Cards() {
             setImageNo(imageNoCurrent+1)
         }
         else{
-            console.log("nothing");;
+            console.log("nothing");
         }
     }
 
