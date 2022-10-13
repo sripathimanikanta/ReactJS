@@ -81,7 +81,6 @@ export default function Hero() {
     <>
       <section className="hero">
         <Cart price={addToCarts[0]} count={addToCarts[1]} remov={remov} />
-        {/* {Cards_or_Cards_Big()} */}
         <Cards /> 
         <div className="hero-content">
           <div className="sneak-comp">SNEAKER COMPANY</div>

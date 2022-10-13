@@ -16,7 +16,7 @@ function App() {
     // <Anime />
     // <Form />
     // <Todolist />
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
     <Routes>
       <Route
         path="/"
@@ -26,7 +26,7 @@ function App() {
           </Provider>
         }
       />
-      <Route path="/about" element={<About />} />
+      <Route path="about" element={<About />} />
       <Route path="*" element={ <div>Error</div>}/>
     </Routes>
   </BrowserRouter>
