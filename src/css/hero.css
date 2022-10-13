@@ -83,6 +83,13 @@
   border-radius: 1em;
   margin-bottom: 4em;
 }
+.add-cart:hover {
+  background-color: white;
+  color: #ff7d1b;
+}
+.add-cart:hover svg path {
+  fill: #ff7d1b;
+}
 
 @media only screen and (min-width: 850px) {
   .hero {

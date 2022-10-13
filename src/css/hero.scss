@@ -84,6 +84,15 @@
     align-items: center;
     border-radius: 1em;
     margin-bottom: 4em;
+
+    &:hover{
+        background-color: white;
+        color: base.$theme;
+
+        svg path{
+            fill: base.$theme;
+        }
+    }
 }
 
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import img_hero_1 from "./Assets/image-product-1.jpg";
 import img_hero_2 from "./Assets/image-product-2.jpg";
 import img_hero_3 from "./Assets/image-product-3.jpg";
@@ -14,6 +14,19 @@ export default function Cards() {
     // const imageNoCurrent=0;
     let [imageNoCurrent, setImageNo] = useState(0);
     const images = [img_hero_1, img_hero_2, img_hero_3, img_hero_4];
+
+    useEffect(() =>{
+      if(imageNoCurrent === 0){
+        document.querySelector('.button-left').classList.add('hide-at-zero-last')
+      }
+      else if(imageNoCurrent === 3){
+        document.querySelector('.button-right').classList.add('hide-at-zero-last')
+      }
+      else{
+        document.querySelector('.button-left').classList.remove('hide-at-zero-last')
+        document.querySelector('.button-right').classList.remove('hide-at-zero-last')
+      }
+    })
 
     function NextImg() {
         if(imageNoCurrent < images.length-1 ){ 
