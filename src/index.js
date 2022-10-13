@@ -19,7 +19,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route
-          path="/ReactJS"
+          path="/"
           element={
             <Provider store={store}>
               <Home />
