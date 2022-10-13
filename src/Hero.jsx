@@ -6,23 +6,17 @@ import "./css/hero.css";
 import Cards from "./Cards";
 import Cart from "./Cart";
 // import Card from './Cards_Big';
-import { useSelector, useDispatch } from "react-redux";
-import {IncreNum, DecreNum} from './Actions/actions';
 
 export default function Hero() {
-  let myState = useSelector((state) => (state.changeTheNumber));
-  let upDate = useDispatch()
   let [count, setCount] = useState(0);
 
   function IncNum() {
     setCount(count + 1);
-    upDate(IncreNum(1));
   }
 
   function DecNum() {
     if (count > 0) {
       setCount(count - 1);
-      upDate(DecreNum(1))
     }
   }
 
@@ -137,45 +131,6 @@ export default function Hero() {
                 </svg>
               </span>
             </div>
-            {/* <div className="cart-num">
-              <span className="cart-buttons" onClick={() => {upDate(DecreNum(1))}}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="2em"
-                  height="2em"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="none"
-                    stroke="#ff7d1b"
-                    stroke-linecap="round"
-                    stroke-width="2"
-                    d="M20 12H4"
-                  />
-                </svg>
-              </span>
-              <span className="number" style={{ fontWeight: "bold" }}>
-                {myState}
-              </span>
-              <span className="cart-buttons" onClick={() => {upDate(IncreNum(1))}}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="2em"
-                  height="2em"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="none"
-                    stroke="#ff7d1b"
-                    stroke-linecap="round"
-                    stroke-width="2"
-                    d="M12 20v-8m0 0V4m0 8h8m-8 0H4"
-                  />
-                </svg>
-              </span>
-            </div> */}
             <div className="add-cart" onClick={addItToCart}>
               <span>
                 <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">

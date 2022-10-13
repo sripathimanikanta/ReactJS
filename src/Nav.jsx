@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import img1 from "./Assets/image-avatar.png";
 import "./css/nav.css";
-import {NavLink} from 'react-router-dom';
+import {NavLink, Outlet} from 'react-router-dom';
 import { useSelector} from "react-redux";
 
 // import Cart from "./Cart";
@@ -68,19 +68,19 @@ export default function Nav() {
             </svg>
             <ul>
               <li>
-                <a href="">Collections</a>
+                <NavLink to="collects">Collections</NavLink>
               </li>
               <li>
-                <a href="">Men</a>
+                <NavLink to="men">Men</NavLink>
               </li>
               <li>
-                <a href="">Women</a>
+                <NavLink to="women">Women</NavLink>
               </li>
               <li>
-                <NavLink to="/about">About</NavLink>
+                <NavLink to="about">About</NavLink>
               </li>
               <li>
-                <a href="">Contact</a>
+                <NavLink to="contact">Contact</NavLink>
               </li>
             </ul>
           </div>
@@ -116,6 +116,7 @@ export default function Nav() {
         </div>
       </nav>
       <hr />
+      <Outlet />
     </>
   );
 }
