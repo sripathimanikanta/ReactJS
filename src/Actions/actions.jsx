@@ -12,3 +12,9 @@ export const DecreNum = (num)=>{
     }
 }
 
+export const DeleteNum =()=>{
+    return{
+        type: "DeleteNum",
+    }
+}
+

@@ -5,22 +5,26 @@ import React, { createContext, useEffect, useState } from "react";
 import "./css/hero.css";
 import Cards from "./Cards";
 import Cart from "./Cart";
+import { useDispatch, useSelector } from "react-redux";
 // import Card from './Cards_Big';
+import {IncreNum, DecreNum, DeleteNum} from './Actions/actions';
 
 export default function Hero() {
-  let [count, setCount] = useState(0);
+  // let [count, setCount] = useState(0);
+  let myState = useSelector((state) =>(state.changeTheNumber));
+  let dispatch = useDispatch();
 
-  function IncNum() {
-    setCount(count + 1);
-  }
+  // function IncNum() {
+  //   setCount(count + 1);
+  // }
 
-  function DecNum() {
-    if (count > 0) {
-      setCount(count - 1);
-    }
-  }
+  // function DecNum() {
+  //   if (count > 0) {
+  //     setCount(count - 1);
+  //   }
+  // }
 
-  let [y, z] = [60, 250];
+  let [y, z] = [50, 250];
   let price = {
     offerPrice: z * ((100 - y) / 100),
     offerPerc: y,
@@ -31,7 +35,7 @@ export default function Hero() {
   // console.log(addToCarts);
 
   function addItToCart() {
-    setAddToCarts([price, count]);
+    setAddToCarts([price, myState]);
     // document.querySelector(".add-cart").style.backgroundColor = "#ff7d1b";
     // document.querySelector(".add-cart").style.color = "white";
     // document.querySelector("svg").children[0].fill = "white";
@@ -41,7 +45,8 @@ export default function Hero() {
 
   function remov() {
     setAddToCarts([price, 0]);
-    setCount(0);
+    // setCount(0);
+    dispatch(DeleteNum())
   }
 
   return (
@@ -66,7 +71,7 @@ export default function Hero() {
           </div>
           <div className="cart-num_cart-button">
             <div className="cart-num">
-              <span className="cart-buttons" onClick={DecNum}>
+              <span className="cart-buttons" onClick={() => dispatch(DecreNum(1))}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="2em"
@@ -84,9 +89,9 @@ export default function Hero() {
                 </svg>
               </span>
               <span className="number" style={{ fontWeight: "bold" }}>
-                {count}
+                {myState}
               </span>
-              <span className="cart-buttons" onClick={IncNum}>
+              <span className="cart-buttons" onClick={() =>dispatch(IncreNum(1))}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="2em"

@@ -63,6 +63,7 @@ let CartItems = (props) => {
               <svg
             // onClick={() => {props.remover(e.id)}}
             onClick={props.remov}
+            // onClick={()=>dispatch(DeleteNum())}
             className="delete"
             width="14"
             height="16"

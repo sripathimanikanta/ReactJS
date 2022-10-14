@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import img1 from "./Assets/image-avatar.png";
 import "./css/nav.css";
 import {NavLink, Outlet} from 'react-router-dom';
@@ -16,6 +16,15 @@ function CloseNav() {
 
 export default function Nav() {
   let myState = useSelector((state) => (state.changeTheNumber));
+
+  useEffect(() => {
+    if(myState === 0){
+      document.querySelector('.Nber').style.display = "none";
+    }
+    else{
+      document.querySelector('.Nber').style.display = "block";
+    }
+  })
   
   let [cartCurrentState, setUpdatedState] = useState("toadd");
   console.log((cartCurrentState));
