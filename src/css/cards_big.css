@@ -1,0 +1,19 @@
+.hero-img-thumb-container {
+  display: flex;
+  gap: 1em;
+  justify-content: space-between;
+}
+
+.hero-img-thumb {
+  border-radius: 1em;
+  width: 5em;
+}
+
+@media only screen and (min-width: 850px) {
+  .hero-img-div {
+    margin-left: unset !important;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+}/*# sourceMappingURL=cards_big.css.map */
