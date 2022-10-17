@@ -8,18 +8,19 @@ import img_hero_2_thumb from "./Assets/image-product-2-thumbnail.jpg";
 import img_hero_3_thumb from "./Assets/image-product-3-thumbnail.jpg";
 import img_hero_4_thumb from "./Assets/image-product-4-thumbnail.jpg";
 import "./css/cards.css";
+import Cards_Big from './Cards_Big';
 
 export default function Cards() {
   // const imageNoCurrent=0;
   let [imageNoCurrent, setImageNo] = useState(0);
   let [imageBackground, setImageBackground] = useState("");
   const images = [img_hero_1, img_hero_2, img_hero_3, img_hero_4];
-  const images_thumb = [
-    img_hero_1_thumb,
-    img_hero_2_thumb,
-    img_hero_3_thumb,
-    img_hero_4_thumb,
-  ];
+  // const images_thumb = [
+  //   img_hero_1_thumb,
+  //   img_hero_2_thumb,
+  //   img_hero_3_thumb,
+  //   img_hero_4_thumb,
+  // ];
 
   useEffect(() => {
     if (imageNoCurrent === 0) {
@@ -56,7 +57,7 @@ export default function Cards() {
   useEffect(() => {
     {
       document.getElementsByClassName("hero-img-thumb")[0].style.border =
-        "#ff7d1b solid 5px";
+        "black solid 2px";
     }
   }, []);
 
@@ -65,9 +66,20 @@ export default function Cards() {
       imageNoCurrent
     ].style.border = "none";
     document.getElementsByClassName("hero-img-thumb")[id].style.border =
-      "#ff7d1b solid 5px";
+      "black solid 2px";
     setImageNo(id);
   }
+
+  function closeup(){
+    setImageBackground(<></>);
+  }
+
+  let value = <Cards_Big closeup={closeup}/>;
+
+  function gogo(){
+    setImageBackground(value)
+  }
+
   return (
     <div className="cards-container">
       <div className="hero-img-div">
@@ -86,7 +98,7 @@ export default function Cards() {
             fill-rule="evenodd"
           />
         </svg>
-        <img className="hero-img" src={images[imageNoCurrent]} alt="" />
+        <img className="hero-img" src={images[imageNoCurrent]} onClick={gogo} alt="" />
         <svg
           onClick={NextImg}
           className="hero-img-button button-right"
@@ -129,6 +141,7 @@ export default function Cards() {
           alt=""
         />
       </div>
+      {imageBackground}
     </div>
   );
 }
